@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { orbitItems } from "@/data/home";
 
 export function HeroSection() {
   return (
@@ -72,55 +71,16 @@ export function HeroSection() {
         </div>
 
         <motion.div
-          className="relative mx-auto w-full max-w-2xl"
+          className="relative mx-auto flex w-full max-w-2xl -translate-y-4 items-center justify-center lg:-translate-y-10"
           initial={{ opacity: 0, scale: 0.94, y: 24 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
         >
-          <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-acid/20 via-transparent to-violet/30 blur-2xl" />
-          <div className="glass-panel relative overflow-hidden rounded-lg">
-            <img
-              src="/degen-house-banner.jpeg"
-              alt="Degen House Web3 marketing agency banner"
-              className="h-full min-h-[320px] w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-            <div className="absolute bottom-5 left-5 right-5 flex flex-wrap items-center justify-between gap-4">
-              <div>
-                <p className="text-xs font-black uppercase tracking-[0.2em] text-acid">Campaign Command</p>
-                <p className="mt-1 text-2xl font-black uppercase text-white">Grow. Hype. Dominate.</p>
-              </div>
-              <div className="rounded-md border border-acid/40 bg-black/75 px-4 py-3 text-right">
-                <p className="text-xs uppercase text-white/50">Launch Status</p>
-                <p className="font-black text-acid">Scaling</p>
-              </div>
-            </div>
-          </div>
-
-          {orbitItems.map((item, index) => {
-            const Icon = item.icon;
-            const positions = [
-              "left-2 top-8",
-              "right-6 top-4",
-              "-left-4 top-1/2",
-              "right-0 top-1/2",
-              "bottom-14 left-10",
-              "bottom-8 right-20",
-              "left-1/2 top-1/4"
-            ];
-
-            return (
-              <motion.div
-                key={item.label}
-                className={`absolute ${positions[index]} hidden items-center gap-2 rounded-full border border-white/15 bg-black/80 px-3 py-2 text-xs font-black text-white shadow-violet backdrop-blur md:flex`}
-                animate={{ y: [0, -12, 0] }}
-                transition={{ duration: 4 + index * 0.35, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <Icon className="h-4 w-4 text-acid" />
-                {item.label}
-              </motion.div>
-            );
-          })}
+          <img
+            src="/degen-house-hero-main.png"
+            alt="Degen House crypto house illustration"
+            className="w-full max-w-[34rem] object-contain drop-shadow-[0_28px_70px_rgba(163,255,18,0.18)] lg:max-w-[38rem]"
+          />
         </motion.div>
       </div>
 
